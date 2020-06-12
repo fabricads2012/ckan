@@ -2,6 +2,32 @@
 
 {% block subtitle %}{{ _('About') }}{% endblock %}
 
+{% block maintag %}
+	<!-- chamada inicial -->
+	<div class="page-header">
+			<div class="shap-pageheader">
+				<div class="line line-1"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+				<div class="line line-2"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+				<div class="line line-3"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+				<div class="line line-4"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+				<div class="line line-5"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+			</div>
+			<div class="container">
+				<div class="pageheader-textarea text-center">
+					<h1>Dados abertos</h1>
+					<article role="article" class="articleSection text-center">
+							Este portal disponibiliza, de forma pública, dados que são gerados por secretarias 
+							e órgãos da gestão municipal. A publicação dos dados em formato aberto permite que qualquer 
+							um desenvolva aplicações ou visualizações, buscando facilitar a análise dos dados, promovendo 
+							a melhoria de serviços por meio da inovação e da criatividade, e contribuindo para uma maior  
+							participação da sociedade junto ao governo municipal.
+					</article>
+				</div>
+			</div>
+	</div>
+	<!-- chamada inicial -->
+{% endblock %}
+
 {% block breadcrumb_content %}
   <li class="active">{% link_for _('About'), 'home.about' %}</li>
 {% endblock %}
@@ -13,7 +39,6 @@
         {% if g.site_about %}
           {{ h.render_markdown(g.site_about) }}
         {% else %}
-          <h1 class="page-heading">{{ _('About') }}</h1>
           {% snippet 'home/snippets/about_text.html' %}
         {% endif %}
       {% endblock %}

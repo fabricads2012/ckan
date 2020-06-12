@@ -36,10 +36,14 @@
             <div class="toolbar">
               {% block breadcrumb %}
                 {% if self.breadcrumb_content() | trim %}
-                  <ol class="breadcrumb">
+                  <nav class="breadcrumb">
                     {% snippet 'snippets/home_breadcrumb_item.html' %}
-                    {% block breadcrumb_content %}{% endblock %}
-                  </ol>
+					<span class="text-success">&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+					<span class="breadcrumb-item active">
+						{% block breadcrumb_content %}
+					</span>
+					{% endblock %}
+                  </nav>
                 {% endif %}
               {% endblock %}
             </div>
