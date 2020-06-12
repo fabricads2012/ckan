@@ -1,0 +1,142 @@
+/* '' */
+/* ..................................................................................................... */
+/* ALTO CONTRASTE */
+.hide{display:none;}
+.contrast,
+.contrast nav,
+.contrast div,
+.contrast li,
+.contrast ol,
+.contrast header,
+.contrast footer,
+.contrast section,
+.contrast main,
+.contrast aside,
+.contrast article {
+  background: black !important;
+  color: white !important; }
+
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+.contrast p,
+.contrast label,
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast i,
+.contrast b,
+.contrast u,
+.contrast span {
+  color: white !important; }
+
+.contrast a {
+  color: yellow !important; }
+  .contrast a:hover {
+    color: white !important; }
+
+.contrast a.btn {
+  color: yellow !important;
+  background: black !important;
+  border: none !important; }
+  .contrast a.btn:hover {
+    color: white !important; }
+
+.contrast button,
+.contrast input[type=button],
+.contrast input[type=reset],
+.contrast input[type=submit] {
+  background: black !important;
+  color: yellow !important;
+  border: none !important; }
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+  background: black !important;
+  border: 1px solid white !important;
+  color: white !important; }
+
+.contrast img.on-contrast-force-gray {
+  -webkit-filter: grayscale(100%) contrast(120%);
+          filter: grayscale(100%) contrast(120%); }
+
+.contrast img.on-contrast-force-white {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1); }
+
+.contrast a i {
+  color: yellow !important; }
+
+.contrast .app-acessibilidadeItens span {
+  color: yellow !important; }
+  .contrast .app-acessibilidadeItens span:hover {
+    color: white !important; }
+
+.contrast .app-acessibilidadeItens a {
+  background: black !important;
+  color: yellow !important; }
+  .contrast .app-acessibilidadeItens a:hover {
+    color: white !important; }
+
+.contrast .nav-tabs .nav-link .active {
+  background: #fff !important;
+  color: #000 !important; }
+
+.contrast .breadcrumb {
+  background: #000 !important;
+  border-bottom: 1px solid #000 !important; }
+  .contrast .breadcrumb a span {
+    color: yellow !important; }
+    .contrast .breadcrumb a span:hover {
+      color: #fff !important; }
+  .contrast .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: #fff !important; }
+
+.contrast .inputGroup-header #transcription i {
+  color: yellow !important; }
+
+.contrast .inputGroup-header #rect {
+  background: #000 !important; }
+
+.contrast .inputGroup-header .icon-searchPesq {
+  background: none !important; }
+
+.contrast .inputGroup-header .form-control {
+  color: #fff !important;
+  border: 1px solid #fff !important; }
+
+.contrast .form-control {
+  color: #fff !important;
+  border: 1px solid #fff !important; }
+
+
+  app-acessibilidade a {
+    color: #d4d4d4 !important; }
+    .app-acessibilidade a:hover {
+      color: #faaf40; }
+  .app-acessibilidade .app-acessibilidadeItens {
+    text-align: right; }
+    .app-acessibilidade .app-acessibilidadeItens .brasil-vlibras {
+      display: none; }
+    .app-acessibilidade .app-acessibilidadeItens ul {
+      display: inline-flex; }
+      .app-acessibilidade .app-acessibilidadeItens ul li {
+        margin-right: 10px; }
+      .app-acessibilidade .app-acessibilidadeItens ul li:last-child {
+        margin-right: 0px !important; 
+      }

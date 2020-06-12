@@ -1,0 +1,209 @@
+<!-- pesquisa  -->
+<div class="search-area">
+    <div class="container">
+        <div class="search-input">
+            <div class="search-close">
+                <i class="icofont-close-squared-alt"></i>
+            </div>
+            <form role="search">
+                <input type="text" name="text" class="form-control" placeholder="Pesquisar dados">
+                <button class="search-btn">
+                    <span class="serch-icon">
+                        <i class="icon-magnifier icons"></i>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- pesquisa  -->
+
+<!-- Mobile menu -->
+<div class="mobile-menu crypto-bg ">
+    <nav class="mobile-header d-flex justify-content-between">
+        <div class="header-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>
+        <div class="header-logo">
+            <a href="" rel=""><img src="/base/assets/images/logo-dado.png" width="170" alt="Dados-abertos"></a>
+        </div>
+        <div class="search">
+            <i class="icon-magnifier icons text-white"></i>
+        </div>
+    </nav>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-area">
+            <div class="mobile-menu-area-inner">
+                    <a href="https://www.fortaleza.ce.gov.br/" rel="">
+                        <img src="/base/assets/images/logo.png" alt="Prefeitura de fortaleza" width="130">
+                    </a>
+                <ul>
+                    <li><a href="#">Home</a>
+                        <ul>
+                            <li class="active"><a href="{{ h.url_for('home.index') }}">Home</a></li>
+                            <li><a href="index-host.html">Sobre</a></li>
+                            <li><a href="index-erp.html">Conjunto de dados</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sobre</a>
+                        <ul>
+                            <li><a href="about.html">Sobre</a></li>
+                            <li><a href="#">Services</a>
+                                <ul>
+                                    <li><a href="service.html">Service</a></li>
+                                    <li><a href="service-single.html">Service Single</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Team Member</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Conjunto de dados</a>
+                        <ul>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Grupos</a>
+                        <ul>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Dúvidas</a>
+                        <ul>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Contato</a>
+                        <ul>
+
+                        </ul>
+                    </li>
+                    <li class="mt-3"><button class="btn btn-pink btn-block">Entrar</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Mobile Menu -->
+
+<section class="app-menu d-none d-lg-block bg-gray-100">
+    <!--acessibilidade-->
+    <div class="app-acessibilidade">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-8  col-12 app-acessibilidadeMenu">
+                    <a class="scroll mr-1" href="#main-central"             data-toggle="tooltip" 
+                                                                            data-placement="top" 
+                                                                            title="atalho alt + 1" 
+                                                                            data-original-title="alt + 1"  accesskey="1"> Conteúdo Central |</a>
+                    <a class="scroll mr-1" href="#navMenu"                  data-toggle="tooltip" 
+                                                                            data-placement="top" 
+                                                                            title="atalho alt + 2" 
+                                                                            data-original-title="alt + 2"  accesskey="2"> Menu |</a>
+                    <a class="scroll mr-1" href="#search"                   data-toggle="tooltip"  
+                                                                            data-placement="top" 
+                                                                            title="atalho alt + 3" 
+                                                                            data-original-title="alt + 3" accesskey="3"> Busca  |</a>
+                    <a class="scroll mr-1" href="#footer"                   data-toggle="tooltip"                                                                                                  data-toggle="tooltip" 
+                                                                            data-placement="top" 
+                                                                            title="atalho alt + 4" 
+                                                                            data-original-title="alt + 4" accesskey="4"> Rodapé </a>
+                                            
+                                                                            <a href="https://vlibras.gov.br/" target="_blank" class="ml-3 mr-1" rel="noreferrer">
+                                                                                <i class="fa fa-deaf text-gray-700" aria-hidden="true"></i>
+                                                                            </a>
+                                                                            <a href="./acessibilidade" class="mr-1"><i class="fa d-inline fa-wheelchair text-gray-700"></i></a>
+                                                                            <a href="#altocontraste" id="altocontraste" class="colorContrast mr-1 text-gray-700"
+                                                                            onclick="window.toggleContrast()">
+                                                                            <i class="fa d-inline fa-adjust text-blue text-gray-700"></i></a>
+                                                                            <a href="" class="mr-1 text-gray-700">A-</a>
+                                                                            <a href="" class="mr-1 text-gray-700">A</a>
+                                                                            <a href="" class="mr-1 text-gray-700">A+</a>
+                                                                            
+                </div>
+                <div class="col-sm-4 col-12 app-acessibilidadeItens">
+                        <ul class="menu mb-0">
+                            <li class="nav-item">
+                                <a href="https://acessoainformacao.fortaleza.ce.gov.br/sistema/site/index.html?ReturnUrl=%2fsistema%2f" 
+                                title="site acesso a informação" class="nav-link px-1" target="_blank" rel="noopener noreferrer">
+                                    <img src="/base/assets/images/acesso-info.png" width="175" alt="Acesso a informação" class="img-acessoInfo">
+                                </a>
+                            </li>
+                            <li class="nav-item px-1">
+                                <a href="https://transparencia.fortaleza.ce.gov.br/" class="nav-link px-1 text-gray-700" target="_blank" rel="noopener noreferrer">Transparência</a>
+                            </li>
+                            <li class="nav-item px-1">
+                                <a href="http://legislacao.fortaleza.ce.gov.br/index.php/P%C3%A1gina_principal" class="nav-link px-1 text-gray-700" target="_blank" rel="noopener noreferrer">Legislação</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/acessibilidade-->        
+</section>
+
+<!-- menu desktop -->
+<header id="header"class="header-section crypto bg-main">
+    <div class="header-area">
+        <div class="container">
+            <div class="primary-menu">
+                <div class="logo align-items-center">
+                    <a href="https://www.fortaleza.ce.gov.br/" rel="">
+                        <img src="/base/assets/images/logo-citinova.png" alt="Prefeitura de fortaleza" width="145">
+                    </a> 
+                    <a href="./">
+                        <img src="/base/assets/images/dados.png" alt="dados abertos" width="120">
+                    </a>
+                </div>
+                <nav id="navMenu" class="main-area">
+                    <div class="main-menu">
+                        <ul>
+						    <li>
+                                <a class="active" href="{{ h.url_for('home.index') }}">Home</a>
+                            </li>
+							{{ h.build_nav_main( ('home.about', _('About'))) }}
+                            <!--<li>
+							
+                                <a href="./sobre.html">Sobre</a>
+                            </li>-->
+                            <li>
+                                <a href="{{ h.url_for('search') }}">Conjunto de dados</a>
+                            </li>
+                            <li>
+                                <a href="{{ h.url_for('group_index') }}">Grupos</a>
+                                <ul>
+                                    <li><a href="{{ h.url_for('group_index') }}">Saúde</a></li>
+                                    <li><a href="">Educação</a></li>
+                                    <li><a href="">Mobilidade</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ h.url_for('organizations_index') }}">Organizações</a>
+                            </li>
+                            <li><a href="#">Ajuda</a>
+                                <ul>
+                                    <li><a href="./contato.html">Fale conosco</a></li>
+                                    <li><a href="./faq.html">Dúvidas frequentes</a></li>
+                                    <li><a href="./manuais-videos.html">Manuais e vídeos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-right rightButtonMenu d-flex justify-content-end">
+                        <div class="search mr-3">
+                            <i class="icon-magnifier icons font-2xl"></i>
+                        </div>
+                        <div class="" data-toggle="modal" data-target="#cadastroLogin">
+                            <i class="icon-user icons font-2xl"></i>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Menu desktop -->

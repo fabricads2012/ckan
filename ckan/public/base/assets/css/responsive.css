@@ -1,0 +1,100 @@
+@media (min-width: 768px){
+
+    .bg-service .section-wrapper .lab-item-2 {
+        width: 100% !important;
+    }
+  
+  }
+  
+  @media (min-width: 1200px) {
+    .bg-service .section-wrapper .lab-item-2 .lab-inner .lab-content {
+        width: 100% !important;
+    }
+  }
+  
+  @media (max-width: 768px){
+  
+    .search-area .search-input form{
+        width: 100% !important;
+    }
+  
+    .search-area .search-input form input{
+        width: 100% !important;
+    }
+  
+    .search-area .search-input form button.search-btn{
+      right: 20px !important;
+    }
+  
+    .service-single .card-data .link-data {
+      font-size: 1.0rem;
+      padding-left: 10px !important;
+    }
+  
+    .service-single .card-data .linksDatas{
+      padding-left: 15px !important;
+      margin-top: 15px;
+    }
+  
+    .service-single .section-wrapper .accordion-aside .service-tab ul.tab-menu li{
+        padding: 20px 25px;
+        border: 1px solid #ebebeb;
+        color: #000000;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-bottom: none;
+  
+    }
+  
+    .service-single .section-wrapper .accordion-aside .service-tab ul.tab-menu li:hover{
+      background: #e2fbf9;
+      border-left: 4px solid #00a195;
+    }
+  
+    .serviceData-area .objetoIframe {
+      width: 100%;
+      height: 550px;
+    }
+  
+    .banner-section.style-6.crypto .banner-area .content-part .section-header form input {
+      width: calc(100% - 50px);
+      height: 56px;
+    }
+  
+    .banner-area .content-part{
+      padding-top: 100px;
+    }
+  
+    .page-header {
+      padding: 80px 0 !important;
+    }
+  
+    .page-header .pageheader-textarea h1 {
+      font-size: 2.25rem !important;
+    }
+  
+    /*Section */
+    .page-header .articleSection{
+      width: 100%;
+      margin: 0 auto;
+      font-size: 1.0rem;
+    }
+  
+  
+  }
+  
+  @media (min-width: 992px){
+  
+    .service-single .section-wrapper .right-item {
+        width: calc(100% - 25%);
+    }
+  
+    .service-single .section-wrapper .left-item {
+      width: calc(25%);
+      margin-top: 0;
+    }
+    
+  }
+  

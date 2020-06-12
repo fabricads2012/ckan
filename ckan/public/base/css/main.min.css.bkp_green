@@ -9408,7 +9408,7 @@ h4 small {
 }
 @media (min-width: 768px) {
   .hero {
-    background: #fff;
+    background: url("../../../base/images/background-tile.png");
   }
 }
 .hero:after {
@@ -9649,7 +9649,6 @@ h4 small {
 @media (min-width: 992px) {
   .homepage [role=main] {
     padding: 20px 0;
-	background-color:#fff;
   }
   .homepage.layout-1 .row1 .col2 {
     position: absolute;
@@ -9811,8 +9810,6 @@ h4 small {
 }
 .masthead .logo {
   display: inline-block;
-  border-right: 1px solid #FFF;
-  padding-right: 3px;
 }
 .masthead .logo img {
   max-height: 60px;
@@ -10737,8 +10734,4 @@ iframe {
 }
 .reduced-padding {
   padding: 3px 5px;
-}
-
-.home-custom{
-		background-color:#fff;
 }

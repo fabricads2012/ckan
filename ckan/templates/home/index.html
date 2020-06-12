@@ -7,12 +7,587 @@
 {% block toolbar %}{% endblock %}
 
 {% block content %}
-  <div class="homepage layout-{{ homepage_style }}">
-    <div class="container">
-      {{ self.flash() }}
-    </div>
-    {% block primary_content %}
-      {% snippet "home/layout{0}.html".format(homepage_style) %}
-    {% endblock %}
+  <div class="home-custom homepage layout-{{ homepage_style }}">
+		<!-- Banner  -->
+        <section class="banner-section style-6 crypto crypto-bg" style="padding-top:15px;">
+            <!--imagem de fundo-->
+            <!-- <div class="round-one d-none d-lg-block">
+                <a href="./index.html" rel="">
+                    <img src="/base/assets/images/contato-desenho.jpg" alt="logo dados-abertos">
+                </a>
+            </div> -->
+            <!--/imagem de fundo-->
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="banner-area">
+                <div class="container">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-lg-6 col-12">
+                            <div class="content-part" id="search">
+                                <div class="section-header style-2">
+                                    <a href="./index.html" rel="" class="d-none d-md-block">
+                                        <img src="/base/assets/images/logo-dado.png" alt="logo dados-abertos"
+                                            width="320" class="mb-3">
+                                    </a>
+                                    <h3 class="text-main display-4">Explore dados</h3>
+                                    <p class="text-gray-700">Fortaleza conta com aproximadamente , <a
+                                            class="text-pink font-bold">12.500</a> dados</p>
+                                   <!-- -->
+									<form action="{% url_for controller='package', action='search' %}" method="get">
+										  <input placeholder="Pesquisar conjunto de dados" type="text"  name="q" placeholder="{{ _('Search') }}" />
+										  <button class="btn btn-pink" type="submit">
+											<i class="icon-magnifier icons text-white d-md-none"></i>
+											<span class="d-none d-md-block">Pesquisar</span>
+										  </button>
+										
+									</form>
+                                    <p class="tagsPop">Etiquetas populares: <a href="">Saúde</a>, <a href="">Esportes</a> , <a href="">cidade inteligente</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="section-wrapper">
+                                <div class="banner-thumb text-center">
+                                    <img src="/base/assets/images/tech-city.png" width="550" alt="isometrico desenho">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <h4 class="text-primary">Grupos</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon culturaicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2 "></i>
+                                <p>Cultura</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon servidoricon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Demografia</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon educacaoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Educação</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon planejamentoegestaoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Gestão Pública</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="fa fa-star-o fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Esportes</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon desenvolvimentoeconomicoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Economia</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon habitacaoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Habitação</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon urbanismoemeioambienteicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Meio ambiente e Urbanismo</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon saudeicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Saúde</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon defesadoconsumidoricon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Segurança</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon mobilidadeicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Transporte</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
+                            <a href="">
+                                <i class="demo-icon turismoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
+                                <p>Turismo</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ Banner  -->
+		<!-- Seção Sobre -->
+        <section class="about-section style-6 crypto-bg pt-3 pb-0">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                            <div class="abr-part">
+                                <div class="section-header style-2">
+                                    <h2 class="text-main">Fortaleza aberta?</h2>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga blanditiis
+                                        inventore quod incidunt dolore reiciendis esse adipisci sit. Doloribus similique impedit
+                                        est,
+                                        quasi adipisci doloremque vitae accusamus debitis magnam vero.</p>
+                                    <ul>
+                                        <li>
+                                            <div class="left"><span><i class="fa fa-code"></i></span></div>
+                                            <div class="right">
+                                                <p class="ml-2 mt-2">Desenvolvedores</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><span><i class="fa fa-graduation-cap"></i></span></div>
+                                            <div class="right">
+                                                <p class="ml-2 mt-2">Pesquisadores</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><span><i class="fa fa-briefcase"></i></span></div>
+                                            <div class="right">
+                                                <p class="ml-2 mt-2">Empresas privadas.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="left"><span><i class="icofont-tick-mark"></i></span></div>
+                                            <div class="right">
+                                                <p class="ml-2 mt-2">Orgãos públicos.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="abl-part">
+                            <div class="about-thumb">
+                                <img src="/base/assets/images/tech-data.png" alt="desenho cidade e dados abertos">
+                                <a href="https://www.freepik.com/free-photos-vectors/background" class="vis">Background vector created by pikisuperstar - www.freepik.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Seção sobre -->
+
+        <!-- Analitico -->
+        <section class="market-range-section  style-6 pt-3 pb-5 crypto-bg">
+        <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="container">
+                <div class="top-area">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12">
+                            <div class="mr-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s">
+                                <img src="/base/assets/images/tech-city.png" alt="cidade isometrica ">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="section-header style-2">
+                                <h2 class="text-main">Estatísticas</h2>
+                                <p>Don’t get shirty with mein owtto doing with me arse down the problems have t car boot
+                                    happy days no biggie bevvy only awesome quid I,m goods info my I,m goods info my awesome
+                                    theme flat the little rotter cheeky.!</p>
+                            </div>
+                            <div class="section-wrapper">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-item">
+                                        <div class="skill-title">
+                                            <div class="left">Conjunto de dados</div>
+                                            <div class="right">85%</div>
+                                        </div>
+                                        <div class="skillbar-container clearfix" data-percent="85%">
+                                            <div class="skills"
+                                                style="background: linear-gradient(to top, #23cc88, #8ecf35);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-title">
+                                            <div class="left">Entidades</div>
+                                            <div class="right">70%</div>
+                                        </div>
+                                        <div class="skillbar-container clearfix" data-percent="70%">
+                                            <div class="skills"
+                                                style="background: linear-gradient(to top, #1a09b4, #141418);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-title">
+                                            <div class="left">Grupos</div>
+                                            <div class="right">60%</div>
+                                        </div>
+                                        <div class="skillbar-container clearfix" data-percent="60%">
+                                            <div class="skills"
+                                                style="background: linear-gradient(to top, #ecc203, #fcee6f);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-title">
+                                            <div class="left">usuários</div>
+                                            <div class="right">50%</div>
+                                        </div>
+                                        <div class="skillbar-container clearfix" data-percent="70%">
+                                            <div class="skills"
+                                                style="background: linear-gradient(to top, #be262d, #dd6281);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-area">
+                    <div class="section-wrapper">
+                        <div class="contact-count-item">
+                            <div class="contact-count-inner">
+                                <div class="contact-count-content">
+                                    <h5 class="text-green"><span class="counter">370</span></h5>
+                                    <p>Conjunto de dados</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-count-item">
+                            <div class="contact-count-inner">
+                                <div class="contact-count-content">
+                                    <h5 class="text-blue-darken"><span class="counter">348</span></h5>
+                                    <p>Entidades</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-count-item">
+                            <div class="contact-count-inner">
+                                <div class="contact-count-content">
+                                    <h5 class="text-yellow-main"><span class="counter">25</span></h5>
+                                    <p>Grupos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-count-item">
+                            <div class="contact-count-inner">
+                                <div class="contact-count-content">
+                                    <h5 class="text-red-darken"><span class="counter">24</span></h5>
+                                    <p>Usuários</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ Analitico -->
+
+        <!-- dados-->
+        <div class="service-sponsor">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <!-- Service Section Style 2 Start Here -->
+            <section class="service-section bg-service style-7 crypto-bg">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="text-main">Ùltimas atualizações</h2>
+                    </div>
+                    <div class="section-wrapper">
+                        <div class="lab-item-2">
+                            <div class="lab-inner">
+                                <div class="lab-content">
+                                    <table class="table table-responsive-sm table-striped">
+                                        <thead class="">
+                                            <tr>
+                                                <th>Título</th>
+                                                <th class="text-lowercase">Orgão</th>
+                                                <th>Grupo</th>
+                                                <th>Data</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td class="text-blue"><a href="#">Ação de governo <i class="fa fa-link"></i></a></td>
+                                                <td style="text-align:left">SEPOG</td>
+                                                <td>Finanças</td>
+                                                <td>12/01/2020</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td class="text-blue"><a href="#">Contábil - plano de Contas <i class="fa fa-link"></i></a></td>
+                                                <td style="text-align:left">SEFIN</td>
+                                                <td>Finanças</td>
+                                                <td>05/01/2020</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td class="text-blue"><a href="#">Pontos de wi-fi terminais <i class="fa fa-link"></i></a></td>
+                                                <td style="text-align:left">ETUFOR</td>
+                                                <td>Tranporte</td>
+                                                <td>03/01/2020</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td class="text-blue"><a href="#">Dicionario - Categoria Economica  <i class="fa fa-link"></i></a></td>
+                                                <td style="text-align:left">SEPOG</td>
+                                                <td>Planejamento</td>
+                                                <td>12/01/2020</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-main right">Consultar todos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Service Section Style 2 Ending Here -->
+        </div>   
+        <!--/dados-->
+
+        <!-- dados sobre -->
+        <section class="service-section style-8 crypto-bg padding-tb">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="text-main">Para que dados abertos?</h2>
+                </div>
+                <div class="section-wrapper">
+                    <div class="abs-thumb">
+                        <img src="/base/assets/images/mobile-isometric.png" alt="isometrico telefone" width="220">
+                        <a href="https://www.freepik.com/free-photos-vectors/background" class="vis">Background vector created by pikisuperstar - www.freepik.com</a>
+                    </div>
+                    <div class="service-content">
+                        <ul class="abs-items">
+                            <li>
+                                <div class="abs-item">
+                                    <div class="left">
+                                        <div class="lb-thumb">
+                                            <i class="icon-eye icons font-2xl text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <h4 class="text-pink">1. Monitore</h4>
+                                        <p>For business which a product online product listings in the</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="abs-item">
+                                    <div class="left">
+                                        <div class="lb-thumb">
+                                            <i class="icon-pie-chart icons font-2xl text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <h4 class="text-blue">2. Analise</h4>
+                                        <p>For business which a product online product listings in the</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="abs-item">
+                                    <div class="left">
+                                        <div class="lb-thumb">
+                                            <i class="icon-share icons font-2xl text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <h4 class="text-green">3. Compartilhe</h4>
+                                        <p>For business which a product online product listings in the</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="abs-item">
+                                    <div class="left">
+                                        <div class="lb-thumb">
+                                            <i class="fa fa-code text-white font-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <h4 class="text-red">4. Desenvolva</h4>
+                                        <p>For business which a product online product listings in the</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/dados sobre  -->
+
+        <!--seção outros portais-->
+        <div class="service-sponsor my-5">
+            <section class="service-section style-7 crypto-bg">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="text-main">Outros portais de dados</h2>
+                    </div>
+                    <div class="section-wrapper">
+                        <div class="lab-item-2">
+                            <a href="https://digital.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                                <div class="lab-inner">
+                                    <div class="lab-thumb">
+                                        <img src="/base/assets/images/logomarca.jpg" alt="Fortaleza digital">
+                                    </div>
+                                    <div class="lab-content">
+                                        <p>Portal de serviços digitais da Prefeitura de Fortaleza.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lab-item-2">
+                            <a href="https://transparencia.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                                <div class="lab-inner">
+                                    <div class="lab-thumb">
+                                        <img src="/base/assets/images/logo-transpAlt.png" alt="portal da Transparência">
+                                    </div>
+                                    <div class="lab-content">
+                                        <p>Acessos os dados orçamentos entre outros da prefeitura. </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section-wrapper">
+                        <div class="lab-item-2">
+                            <a href="https://digital.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                                <div class="lab-inner">
+                                    <div class="lab-thumb">
+                                        <img src="/base/assets/images/logotipo-fort-mapas.png" alt="Fortaleza em mapas" width="160">
+                                    </div>
+                                    <div class="lab-content">
+                                        <p>Acessos os mapas  outros dados da prefeitura. </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lab-item-2">
+                            <a href="https://transparencia.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                                <div class="lab-inner">
+                                    <div class="lab-thumb">
+                                        <img src="/base/assets/images/logotipo-fort-mapas.png" alt="Fortaleza em mapas" width="160">
+                                    </div>
+                                    <div class="lab-content">
+                                        <p>Acessos os dados orçamentos entre outros da prefeitura. </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--/outros portais-->
   </div>
 {% endblock %}

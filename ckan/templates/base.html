@@ -10,18 +10,8 @@
 
   {# Allows custom attributes to be added to the <head> tag #}
   <head{% block headtag %}{% endblock %}>
-    {#
-    Add custom meta tags to the page. Call super() to get the default tags
-    such as charset, viewport and generator.
-
-    Example:
-
-    {% block meta %}
-      {{ super() }}
-      <meta name="description" value="My website description" />
-    {% endblock %}
-
-    #}
+    
+	
     {%- block meta -%}
       <meta charset="utf-8" />
       {% block meta_generator %}<meta name="generator" content="ckan {{ h.ckan_version() }}" />{% endblock %}
@@ -51,6 +41,20 @@
     #}
     {% block links -%}
       <link rel="shortcut icon" href="{{ g.favicon }}" />
+		<link rel="stylesheet" href="/base/assets/css/animate.css">
+		<link rel="stylesheet" href="/base/assets/css/all.min.css">
+		<link rel="stylesheet" href="/base/assets/css/icofont.min.css">
+		<link rel="stylesheet" href="/base/assets/css/icon-custom.css">
+		<link rel="stylesheet" href="/base/assets/css/lightcase.css">
+		<link rel="stylesheet" href="/base/assets/css/swiper.min.css">
+		<link rel="stylesheet" href="/base/assets/vendors/css/simple-line-icons.min.css" />
+		<link rel="stylesheet" href="/base/assets/vendors/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/base/assets/css/style.css">
+		<link rel="stylesheet" href="/base/assets/css/fod.min.css">
+		<link rel="stylesheet" href="/base/assets/css/acessibilidade.css">
+		<link rel="stylesheet" href="/base/assets/css/temp.css">
+		<link rel="stylesheet" href="/base/assets/css/responsive.css">
+
     {% endblock -%}
 
     {#
@@ -63,6 +67,8 @@
       {% block styles %}
         {{ super() }}
         <link rel="stylesheet" href="/base/css/custom.css" />
+		
+		<!--/responsive-->
       {% endblock %}
     #}
     {%- block styles %}
@@ -112,5 +118,21 @@
       {# defined in the config.ini under "ckan.template_footer_end" #}
       {{ g.template_footer_end | safe }}
     {%- endblock %}
+	
+	<script src="/base/assets/js/jquery.js"></script>
+    <script src="/base/assets/js/fontawesome.min.js"></script>
+    <script src="/base/assets/js/waypoints.min.js"></script>
+    <script src="/base/assets/js/bootstrap.min.js"></script>
+    <script src="/base/assets/js/lightcase.js"></script>
+    <script src="/base/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/base/assets/js/swiper.min.js"></script>
+    <script src="/base/assets/js/jquery.countdown.min.js"></script>
+    <script src="/base/assets/js/jquery.counterup.min.js"></script>
+    <script src="/base/assets/js/progress.js"></script>
+    <script src="/base/assets/js/wow.min.js"></script>
+    <script src="/base/assets/js/functions.js"></script>
+    <script src="/base/assets/js/script.js"></script>
+    <!--script-->
+	
   </body>
 </html>

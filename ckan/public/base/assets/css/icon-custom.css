@@ -1,0 +1,122 @@
+/*******/
+
+@font-face {
+    font-family: 'fol-icons';
+    src: url('fonts/fol-icons.eot?776755');
+    src: url('fonts/fol-icons.eot?776755#iefix') format('embedded-opentype'),
+         url('fonts/fol-icons.woff?776755') format('woff'),
+         url('fonts/fol-icons.ttf?776755') format('truetype'),
+         url('fonts/fol-icons.svg?776755#fol-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+   
+   
+  .demo-icon {
+    font-family: "fol-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+  
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+  
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+  
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+  
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+  
+    /* You can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+  
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+  
+  .cancel-icon-fol:before { content: '\e800'; } /* '' */
+  .lock-open-icon-fol:before { content: '\e801'; } /* '' */
+  .cancel-alticon-fol:before { content: '\e802'; } /* '' */
+  .attach-outlineicon-fol:before { content: '\e803'; } /* '' */
+  .heart-icon-fol:before { content: '\e804'; } /* '' */
+  .calendar-outlilneicon-fol:before { content: '\e805'; } /* '' */
+  .volume-officon-fol:before { content: '\e806'; } /* '' */
+  .volume-lowicon-fol:before { content: '\e807'; } /* '' */
+  .volume-middleicon-fol:before { content: '\e808'; } /* '' */
+  .volume-highicon-fol:before { content: '\e809'; } /* '' */
+  .power-outlineicon-fol:before { content: '\e80a'; } /* '' */
+  .drizzleicon-fol:before { content: '\e80b'; } /* '' */
+  .cloud-sunicon-fol:before { content: '\e80c'; } /* '' */
+  .down-outlineicon-fol:before { content: '\e80d'; } /* '' */
+  .left-outlineicon-fol:before { content: '\e80e'; } /* '' */
+  .right-outlineicon-fol:before { content: '\e80f'; } /* '' */
+  .up-outlineicon-fol:before { content: '\e810'; } /* '' */
+  .left-open-outlineicon-fol:before { content: '\e811'; } /* '' */
+  .right-open-outlineicon-fol:before { content: '\e812'; } /* '' */
+  .staricon-fol:before { content: '\e813'; } /* '' */
+  .attentionicon-fol:before { content: '\e814'; } /* '' */
+  .upload-cloud-outlineicon-fol:before { content: '\e815'; } /* '' */
+  .upload-outlineicon-fol:before { content: '\e816'; } /* '' */
+  .download-outlineicon-fol:before { content: '\e817'; } /* '' */
+  .thumbs-upicon-fol:before { content: '\e818'; } /* '' */
+  .warning-emptyicon-fol:before { content: '\e819'; } /* '' */
+  .mic-outlineicon-fol:before { content: '\e81a'; } /* '' */
+  .cog-outlineicon-fol:before { content: '\e81b'; } /* '' */
+  .wrench-outlineicon-fol:before { content: '\e81c'; } /* '' */
+  .pin-outlineicon-fol:before { content: '\e81d'; } /* '' */
+  .tagicon-fol:before { content: '\e81e'; } /* '' */
+  .mapicon-fol:before { content: '\e81f'; } /* '' */
+  .direction-outlineicon-fol:before { content: '\e820'; } /* '' */
+  .pencilicon-fol:before { content: '\e821'; } /* '' */
+  .doc-texticon-fol:before { content: '\e822'; } /* '' */
+  .printicon-fol:before { content: '\e823'; } /* '' */
+  .doc-addicon-fol:before { content: '\e824'; } /* '' */
+  .doc-removeicon-fol:before { content: '\e825'; } /* '' */
+  .wifiicon-fol:before { content: '\e826'; } /* '' */
+  .flash-outlineicon-fol:before { content: '\e827'; } /* '' */
+  .thumbs-downicon-fol:before { content: '\e828'; } /* '' */
+  .flagicon-fol:before { content: '\e829'; } /* '' */
+  .exporticon-fol:before { content: '\e82a'; } /* '' */
+  .eye-outlineicon-fol:before { content: '\e82b'; } /* '' */
+  .ok-outlineicon-fol:before { content: '\e82c'; } /* '' */
+  .cancel-outlineicon-fol:before { content: '\e82d'; } /* '' */
+  .plus-outlineicon-fol:before { content: '\e82e'; } /* '' */
+  .minus-outlineicon-fol:before { content: '\e82f'; } /* '' */
+  .picture-outlineicon-fol:before { content: '\e830'; } /* '' */
+  .search-outlineicon-fol:before { content: '\e831'; } /* '' */
+  .trabalhoeservicossociaisicon-fol:before { content: '\e832'; } /* '' */
+  .financasicon-fol:before { content: '\e833'; } /* '' */
+  .fiscalizacaoicon-fol:before { content: '\e834'; } /* '' */
+  .planejamentoegestaoicon-fol:before { content: '\e835'; } /* '' */
+  .qualificacaoprofissionalicon-fol:before { content: '\e841'; } /* '' */
+  .habitacaoicon-fol:before { content: '\e836'; } /* '' */
+  .defesadoconsumidoricon-fol:before { content: '\e837'; } /* '' */
+  .juventudeicon-fol:before { content: '\e838'; } /* '' */
+  .urbanismoemeioambienteicon-fol:before { content: '\e839'; } /* '' */
+  .mobilidadeicon-fol:before { content: '\e83a'; } /* '' */
+  .ouvidoriaicon-fol:before { content: '\e83b'; } /* '' */
+  .saudeicon-fol:before { content: '\e83c'; } /* '' */
+  .desenvolvimentoeconomicoicon-fol:before { content: '\e83d'; } /* '' */
+  .servidoricon-fol:before { content: '\e83e'; } /* '' */
+  .turismoicon-fol:before { content: '\e83f'; } /* '' */
+  .culturaicon-fol:before { content: '\e840'; } /* '' */
+  .educacaoicon-fol:before { content: '\e841'; } /* '' */
+  .concursoseselecoesicon-fol:before { content: '\e841'; } /* '' */
+  .flag-emptyicon-fol:before { content: '\f11d'; } /* '' */
+  .calendar-check-oicon-fol:before { content: '\f274'; } /* '' */
+  .envelope-open-oicon-fol:before { content: '\f2b7'; } /* '' */
+  .user-circle-oicon-fol:before { content: '\f2be'; } /* '' */
+  .user-oicon-fol:before { content: '\f2c0'; } /* '' */
