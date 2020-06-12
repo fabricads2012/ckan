@@ -8708,6 +8708,8 @@ fieldset[disabled] .control-custom.disabled .checkbox.btn.focus {
   position: relative;
   margin-bottom: 10px;
   padding: 5px 0;
+  margin-left:-15px;
+  border-bottom: 1px solid #00a195!important;
 }
 .toolbar:before,
 .toolbar:after {
@@ -9311,7 +9313,7 @@ h4 small {
   [role=main],
   .main {
     padding-top: 10px;
-    background: #eee url("../../../base/images/bg.png");
+    background: #fff;
   }
 }
 [role=main] {
