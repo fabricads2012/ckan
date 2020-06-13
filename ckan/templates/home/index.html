@@ -16,7 +16,14 @@
                     <img src="/base/assets/images/contato-desenho.jpg" alt="logo dados-abertos">
                 </a>
             </div> -->
-            <!--/imagem de fundo-->
+            <!--/imagem de fundox
+			
+			<span>package_count:{{ package_count }}</span></br>
+			<span>users_list:{{ users_list }}</span></br>
+			<span>users_list_count:{{ users_list_count }}</span></br>
+			<span>page:{{ page }}</span></br>
+			<span>page.items:{{ page.items }}</span></br>
+			-->
             <div class="lines">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -77,73 +84,73 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/cultura">
                                 <i class="demo-icon culturaicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2 "></i>
                                 <p>Cultura</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/demografia">
                                 <i class="demo-icon servidoricon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Demografia</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/educacao">
                                 <i class="demo-icon educacaoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Educação</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/gestaopublica">
                                 <i class="demo-icon planejamentoegestaoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Gestão Pública</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/esportes">
                                 <i class="fa fa-star-o fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Esportes</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/economia">
                                 <i class="demo-icon desenvolvimentoeconomicoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Economia</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/habitacao">
                                 <i class="demo-icon habitacaoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Habitação</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/meioambiente">
                                 <i class="demo-icon urbanismoemeioambienteicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Meio ambiente e Urbanismo</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/saude">
                                 <i class="demo-icon saudeicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Saúde</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/seguranca">
                                 <i class="demo-icon defesadoconsumidoricon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Segurança</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/transporte">
                                 <i class="demo-icon mobilidadeicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Transporte</p>
                             </a>
                         </div>
                         <div class="col-lg-2 col-sm-6 col-6 text-center divGrupo-icon">
-                            <a href="">
+                            <a href="/group/turismo">
                                 <i class="demo-icon turismoicon-fol fa-3x icon-circle bg-iconGrad-2 text-white mb-2"></i>
                                 <p>Turismo</p>
                             </a>
@@ -318,7 +325,7 @@
                         <div class="contact-count-item">
                             <div class="contact-count-inner">
                                 <div class="contact-count-content">
-                                    <h5 class="text-green"><span class="counter">370</span></h5>
+                                    <h5 class="text-green"><span class="counter">{{ h.get_site_statistics()['dataset_count'] }}</span></h5>
                                     <p>Conjunto de dados</p>
                                 </div>
                             </div>
@@ -326,7 +333,7 @@
                         <div class="contact-count-item">
                             <div class="contact-count-inner">
                                 <div class="contact-count-content">
-                                    <h5 class="text-blue-darken"><span class="counter">348</span></h5>
+                                    <h5 class="text-blue-darken"><span class="counter">{{ h.get_site_statistics()['organization_count'] }}</span></h5>
                                     <p>Entidades</p>
                                 </div>
                             </div>
@@ -334,7 +341,7 @@
                         <div class="contact-count-item">
                             <div class="contact-count-inner">
                                 <div class="contact-count-content">
-                                    <h5 class="text-yellow-main"><span class="counter">25</span></h5>
+                                    <h5 class="text-yellow-main"><span class="counter">{{ h.get_site_statistics()['group_count'] }}</span></h5>
                                     <p>Grupos</p>
                                 </div>
                             </div>
@@ -535,7 +542,7 @@
                     </div>
                     <div class="section-wrapper">
                         <div class="lab-item-2">
-                            <a href="https://digital.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                            <a target="_blank" href="https://digital.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
                                 <div class="lab-inner">
                                     <div class="lab-thumb">
                                         <img src="/base/assets/images/logomarca.jpg" alt="Fortaleza digital">
@@ -547,7 +554,7 @@
                             </a>
                         </div>
                         <div class="lab-item-2">
-                            <a href="https://transparencia.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                            <a target="_blank" href="https://transparencia.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
                                 <div class="lab-inner">
                                     <div class="lab-thumb">
                                         <img src="/base/assets/images/logo-transpAlt.png" alt="portal da Transparência">
@@ -561,7 +568,7 @@
                     </div>
                     <div class="section-wrapper">
                         <div class="lab-item-2">
-                            <a href="https://digital.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                            <a target="_blank" href="https://digital.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
                                 <div class="lab-inner">
                                     <div class="lab-thumb">
                                         <img src="/base/assets/images/logotipo-fort-mapas.png" alt="Fortaleza em mapas" width="160">
@@ -573,7 +580,7 @@
                             </a>
                         </div>
                         <div class="lab-item-2">
-                            <a href="https://transparencia.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
+                            <a target="_blank" href="https://transparencia.fortaleza.ce.gov.br/" class="text-blue floatRight mt-2">
                                 <div class="lab-inner">
                                     <div class="lab-thumb">
                                         <img src="/base/assets/images/logotipo-fort-mapas.png" alt="Fortaleza em mapas" width="160">

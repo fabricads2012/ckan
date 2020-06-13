@@ -1,0 +1,41 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('About') }}{% endblock %}
+
+{% block maintag %}
+	
+	 <!--page header-->
+        <div class="page-header">
+            <div class="shap-pageheader">
+                <div class="line line-1"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-2"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-3"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-4"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-5"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-6"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+            </div>
+            <div class="container">
+                <div class="pageheader-textarea text-center">
+                    <h1>Manuais e vídeos</h1>
+                    <article role="article" class="articleSection text-center">Conheça mais e siga os manuais para sua orientação.</article>
+                </div>
+            </div>
+        </div>
+        <!-- pageheader -->
+{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active"><a class=" active" href="/manuais">Manuais e vídeos</a></li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+           {% snippet 'faq/snippets/manuais_text.html', groups_count=h.get_site_statistics()['group_count'], dataset_count=h.get_site_statistics()['dataset_count'] %}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

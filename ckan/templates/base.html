@@ -118,7 +118,35 @@
       {# defined in the config.ini under "ckan.template_footer_end" #}
       {{ g.template_footer_end | safe }}
     {%- endblock %}
-	
+	<!-- Modal cadastrar/login-->
+        <div class="modal fade" id="cadastroLogin" tabindex="-1" role="dialog" aria-labelledby="cadastroLoginLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login digital</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-block btn-pink" onclick="window.location.href ='/user/register'">Cadastrar</button>
+                                <button class="btn btn-block btn-success" onclick="window.location.href ='/user/login'">Entrar</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+                </div>
+                </div>
+            </div>
+        </div>
+		
 	<script src="/base/assets/js/jquery.js"></script>
     <script src="/base/assets/js/fontawesome.min.js"></script>
     <script src="/base/assets/js/waypoints.min.js"></script>

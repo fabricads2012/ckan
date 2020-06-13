@@ -61,17 +61,47 @@ def index():
                 u' if you need to reset your password.') \
             % config.get(u'ckan.site_title')
         h.flash_notice(msg, allow_html=True)
-    return base.render(u'home/index.html', extra_vars={})
+    
+    context = {
+        u'return_query': True,
+        u'user': g.user,
+        u'auth_user_obj': g.userobj
+    }
+    data_dict = {
+        u'q': u'*:*',
+        u'order_by': u'name'
+    }
+    users_list = logic.get_action(u'user_list')(context, data_dict)
+    page = h.Page(
+        collection=users_list,
+        page=1,
+        url=h.pager_url,
+        item_count=users_list.count(),
+        items_per_page=10)
+        
+     
+    extra_vars = {u'page': page, u'users_list': users_list, u'users_list_count': users_list.count()}    
+        
+    return base.render(u'home/index.html', extra_vars)
 
 
 def about():
     u''' display about page'''
     return base.render(u'home/about.html', extra_vars={})
 
+def faq():
+    u''' display faq page'''
+    return base.render(u'faq/faq.html', extra_vars={})  
+
+def manuais():
+    u''' display manuais page'''
+    return base.render(u'faq/manuais.html', extra_vars={})        
 
 util_rules = [
     (u'/', index),
-    (u'/about', about)
+    (u'/about', about),
+    (u'/faq', faq),
+    (u'/manuais', manuais)
 ]
 for rule, view_func in util_rules:
     home.add_url_rule(rule, view_func=view_func)

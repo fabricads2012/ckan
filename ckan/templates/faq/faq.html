@@ -1,0 +1,42 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('About') }}{% endblock %}
+
+{% block maintag %}
+	
+	 <!--page header-->
+        <div class="page-header">
+            <div class="shap-pageheader">
+                <div class="line line-1"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-2"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-3"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-4"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-5"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+                <div class="line line-6"><img src="/base/assets/images/data-footer.png" alt="linha de dados"></div>
+            </div>
+            <div class="container">
+                <div class="pageheader-textarea text-center">
+                    <h1>Dúvidas frequentes</h1>
+                    <article role="article" class="articleSection text-center">Aqui você encontra perguntas que podem ocorrer frequentemente sobre dados abertos 
+                        ou sobre este portal.</article>
+                </div>
+            </div>
+        </div>
+        <!-- pageheader -->
+{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active"><a class=" active" href="/faq">Dúvidas frequentes</a></li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+           {% snippet 'faq/snippets/faq_text.html', groups_count=h.get_site_statistics()['group_count'], dataset_count=h.get_site_statistics()['dataset_count'] %}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
