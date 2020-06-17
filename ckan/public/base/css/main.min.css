@@ -1,0 +1,12 @@
+.hide-filters{display:none;}
+.breadcrumb-item li::before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #80CBC4;
+    content: ">";
+	
+}
+.breadcrumb-item li {
+	float: left;
+}

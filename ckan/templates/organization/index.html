@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 
 {% block subtitle %}{{ _('Organizations') }}{% endblock %}
-{% block maintag %}
+{% block headercustom %}
 	<!--
 	<span>get_featured_groups:{{ h.get_site_statistics() }}</span><br/>
 	<span>group_count:{{ h.get_site_statistics()['group_count'] }}</span><br/>
@@ -43,14 +43,110 @@
 {% endblock %}
 
 {% block primary_content_inner %}
-  <h1 class="hide-heading">{% block page_heading %}{{ _('Organizations') }}{% endblock %}</h1>
   {% block organizations_search_form %}
     {% snippet 'snippets/search_form.html', form_id='organization-search-form', type='organization', query=c.q, sorting_selected=c.sort_by_selected, count=c.page.item_count, placeholder=_('Search organizations...'), show_empty=request.params, no_bottom_border=true if c.page.items, sorting = [(_('Name Ascending'), 'title asc'), (_('Name Descending'), 'title desc')] %}
   {% endblock %}
   {% block organizations_list %}
     {% if c.page.items or request.params %}
       {% if c.page.items %}
+        <!-- tab list article-->
+        <ul class="nav nav-tabs ml-0" role="tablist">
+          <li class="nav-item pb-0">
+              <a class="nav-link active show" data-toggle="tab" href="#profile" role="tab" 
+              aria-controls="profile" aria-selected="false">
+              <i class="icon-grid icons d-block"></i>
+          </a>
+          </li>
+          <li class="nav-item pb-0">
+              <a class="nav-link" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                  <i class="icon-list icons d-block"></i>
+              </a>
+          </li>
+      </ul>
+      <!-- /tab list article-->
+
+      <!--content  conteúdo-->
+      <div class="tab-content">
+              <div class="tab-pane active show" id="profile" role="tabpanel">
+                      <div class="row">
+
+                        
+                        {% for organization in c.page.items %}
+                        {% set url = h.url_for(organization.type ~ '_read', action='read', id=organization.name) %}
+                          <div class="col-xl-4 col-lg-6 col-sm-6 col-12">
+                              <div class="card cardSearch">
+                                  <div class="card-body">
+                                      <div class="card-title">
+                                          <a href="{{ url }}" title="{{ _('View {organization_name}').format(organization_name=organization.display_name) }}" rel="">
+                                              <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-responsive media-image">
+                                          </a>
+                                      </div>
+                                      <hr> 
+                                      <article class="cardSearch-article">
+                                        {% if organization.description %}
+                                          {{ h.markdown_extract(organization.description, extract_length=80) }}
+                                        {% endif %}                                 
+                                      </article> 
+                                      <a href="{{ url }}" class="text-blue" rel="">Saiba mais</a>
+                                      <div class="mt-3">
+                                          Dados: <b class="mr-1 ml-1 text-primary">{{organization.package_count}}</b>  
+                                      </div>
+                                  </div>
+                              </div>                                                
+                          </div>
+                        {% endfor %}
+                      </div>
+              </div>
+              <div class="tab-pane " id="home" role="tabpanel">
+                  {% for organization in c.page.items %}
+                  {% set url = h.url_for(organization.type ~ '_read', action='read', id=organization.name) %}
+                          
+                <!--Loop resultado de pesquisasa-->
+                  <div class="card cardSearch">
+                      <div class="card-body">
+                          <div class="d-flex justify-content-start card-title floatLeft">
+                              <a href="{{ url }}" title="{{ _('View {organization_name}').format(organization_name=organization.display_name) }}" rel="">
+                                <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-responsive media-image">
+                              </a>
+                          </div>
+                          <div class="mt-3 floatRight">
+                              <i class="icon-cloud-upload icons mr-1 pt-1 ml-2"></i> 
+                              {{organization.package_count}}:<b class="ml-1 text-primary">Conjunto de dados</b>
+                          </div>
+                          <!-- Texto de descrição do dado Truncate 100 caracteres e o link de direcionamento do dados-->
+                          <div class="card-content">
+                              <hr>
+                              <p class="mb-1">
+                                {% if organization.description %}
+                                  {{ h.markdown_extract(organization.description, extract_length=80) }}
+                                {% endif %}                                        
+                              </p>
+                              <a href="{{ url }}" class="text-blue floatRight" rel="">Ver mais</a>
+                          </div>
+                          <!--Truncate-->
+                      </div>
+                  </div>
+                  {% endfor %}
+                  <!--/Loop resultado de pesquisas-->
+                  
+                  <!--Páginação-->
+                  <ul class="pagination ml-0">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                      <li class="page-item active">
+                      <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                  <!--/páginação-->
+              </div>
+      </div>
+      <!--/content conteúdo-->
+      {#
         {% snippet "organization/snippets/organization_list.html", organizations=c.page.items %}
+        #} 
       {% endif %}
     {% else %}
       <p class="empty">
