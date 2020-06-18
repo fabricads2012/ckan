@@ -1,0 +1,38 @@
+{% trans %}
+<!-- seção main-->
+<main>
+    <section class="contact-us pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="/base/assets/images/contato-desenho.jpg" alt="desenho arte contato" class="img-thumbnail">
+                    <div class="service-social">
+                        <h3 class="mb-3 mt-3">Compartilhe</h3>
+                        <div class="d-flex justify-content-between">
+                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdados.fortaleza.ce.gov.br%2F&amp;src=sdkpreparse"><i class="fa fa-facebook  icon-circle bg-blue-darken" aria-hidden="true"></i></a>
+                            <a target="_blank"  href=""><i class="fa fa-instagram icon-circle bg-pink" aria-hidden="true"></i></a>
+                            <a target="_blank"  href=""><i class="fa fa-twitter   icon-circle bg-info" aria-hidden="true"></i></a>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6">
+                    <form class="contact-form" action="/">
+                        <label for="Nome" >Nome</label>
+                        <input type="text" name="name" placeholder="Nome" id="nome"class="form-control mb-3">
+                        <label for="email" >Email</label>
+                        <input type="email" name="email" placeholder="email" id="email" class="form-control mb-3">
+                        <label for="assunto" >Assunto</label>
+                        <input type="text" name="text" placeholder="Assunto" id="assunto"class="form-control mb-3">
+                        <label for="assunto" >Mensagem</label>
+                        <textarea rows="5" class="form-control mb-3" id="textMensagem" placeholder="Sua mensagem"></textarea>
+                        <button type="submit" name="submit" class="btn btn-main floatRight">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Contact -->		
+{% endtrans %}
+		

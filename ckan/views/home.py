@@ -95,13 +95,18 @@ def faq():
 
 def manuais():
     u''' display manuais page'''
-    return base.render(u'faq/manuais.html', extra_vars={})        
+    return base.render(u'faq/manuais.html', extra_vars={})
+
+def contato():
+    u''' display contato page'''
+    return base.render(u'faq/contato.html', extra_vars={})            
 
 util_rules = [
     (u'/', index),
     (u'/about', about),
     (u'/faq', faq),
-    (u'/manuais', manuais)
+    (u'/manuais', manuais),
+    (u'/contato', contato)
 ]
 for rule, view_func in util_rules:
     home.add_url_rule(rule, view_func=view_func)

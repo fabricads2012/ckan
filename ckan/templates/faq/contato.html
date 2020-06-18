@@ -16,9 +16,8 @@
             </div>
             <div class="container">
                 <div class="pageheader-textarea text-center">
-                    <h1>Dúvidas frequentes</h1>
-                    <article role="article" class="articleSection text-center">Aqui você encontra perguntas que podem ocorrer frequentemente sobre dados abertos 
-                        ou sobre este portal.</article>
+                    <h1>Fale conosco</h1>
+                    <article role="article" class="articleSection text-center">Nossa página de contato responde às dúvidas mais frequentes, mas se você não conseguir achar o que busca saiba que oferecemos um canal de comunicação para o envio de dúvidas, sugestões, reclamações e elogios..</article>
                 </div>
             </div>
         </div>
@@ -26,14 +25,14 @@
 {% endblock %}
 
 {% block breadcrumb_content %}
-  <li class="active"><a class=" active" href="/faq">Dúvidas frequentes</a></li>
+  <li class="active"><a class=" active" href="/contato">Fale conosco</a></li>
 {% endblock %}
 
 {% block primary %}
   <article class="module">
     <div class="module-content">
       {% block about %}
-           {% snippet 'faq/snippets/faq_text.html', groups_count=h.get_site_statistics()['group_count'], dataset_count=h.get_site_statistics()['dataset_count'] %}
+           {% snippet 'faq/snippets/contato_text.html', groups_count=h.get_site_statistics()['group_count'], dataset_count=h.get_site_statistics()['dataset_count'] %}
       {% endblock %}
     </div>
   </article>
