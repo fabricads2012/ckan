@@ -2410,17 +2410,40 @@ def get_featured_organizations(count=1):
                               count=count,
                               items=config_orgs)
     return orgs
+@core_helper
+def recently_changed_packages_activity_list(limit=None):
+    if limit:
+        data_dict = {u'state':u'active',u'type':u'dataset', 'limit': limit}
+    else:
+        data_dict = {}
+    context = {'model': model, 'session': model.Session, 'user': c.user}
+    return logic.get_action('recently_changed_packages_activity_list')(context, data_dict)
+
+@core_helper
+def list_formats():
+    context = {'model': model, 'session': model.Session,
+                       'user': c.user, 'auth_user_obj': c.userobj}
+    data_dict = {
+                'q': '*:*',
+                'facet.field': facets(),
+                'rows': 4,
+                'start': 0,
+                'sort': 'views_recent desc',
+                'fq': 'capacity:"public"'
+            }
+    query = logic.get_action('package_search')(context, data_dict)
+    return query
+    
 
 @core_helper
 def list_users():
     context = {
-        u'return_query': False,
         u'user': g.user,
         u'auth_user_obj': g.userobj
     }
     data_dict = {
-        u'q': u'*:*',
-        u'order_by': u'name'
+        u'order_by': u'name',
+        u'all_fields': True
     }
     users_list = logic.get_action('user_list')(context, data_dict)
     return users_list
