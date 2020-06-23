@@ -176,9 +176,9 @@
                             <li>
                                 <a href="{{ h.url_for('group_index') }}">Grupos</a>
                                 <ul>
-                                    <li><a href="{{ h.url_for('group_index') }}">Saúde</a></li>
-                                    <li><a href="">Educação</a></li>
-                                    <li><a href="">Mobilidade</a></li>
+                                    {% for group in h.get_featured_groups({count:4}) %}
+                                        <li><a href="/group/{{group.name}}">{{ group.display_name }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </li>
                             <li>

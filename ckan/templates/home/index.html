@@ -23,8 +23,21 @@
 			<span>users_list:{{ users_list }}</span></br>
 			<span>users_list_count:{{ users_list_count }}</span></br>
 			<span>page:{{ page }}</span></br>
-			<span>page.items:{{ page.items }}</span></br>
-			#}
+            <span>page.items:{{ page.items }}</span></br>
+            <span>g.package_count:{{ g.package_count }}</span></br>
+            <span>g.search_facets:{{  g.search_facets }}</span></br>
+            
+            
+            <span>g.search_facets:{{ g.search_facets }}</span></br>
+            
+            <span>g.search_facets.groups:{{ g.search_facets.groups }}</span></br>
+            <span>g.search_facets.groups.items:{{ g.search_facets.groups['items'] }}</span></br>
+            <span>g.search_facets.groups.items:{{ g.search_facets.groups['items'] }}</span></br>    
+            #}
+            <span>Users:{{h.list_users()}}</span>
+            <input type="hidden" id="lsgrupos" name="lsgrupos{{list_groups}}" value="{{list_groups}}"/>
+            
+			
             <div class="lines">
                 <div class="line"></div>
                 <div class="line"></div>

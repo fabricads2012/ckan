@@ -2411,6 +2411,20 @@ def get_featured_organizations(count=1):
                               items=config_orgs)
     return orgs
 
+@core_helper
+def list_users():
+    context = {
+        u'return_query': False,
+        u'user': g.user,
+        u'auth_user_obj': g.userobj
+    }
+    data_dict = {
+        u'q': u'*:*',
+        u'order_by': u'name'
+    }
+    users_list = logic.get_action('user_list')(context, data_dict)
+    return users_list
+
 
 @core_helper
 def get_featured_groups(count=1):
