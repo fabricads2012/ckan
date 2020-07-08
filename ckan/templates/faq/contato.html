@@ -31,8 +31,9 @@
 {% block primary %}
   <article class="module">
     <div class="module-content">
+      {% set current_url = h.full_current_url() %}
       {% block about %}
-           {% snippet 'faq/snippets/contato_text.html', groups_count=h.get_site_statistics()['group_count'], dataset_count=h.get_site_statistics()['dataset_count'] %}
+           {% snippet 'faq/snippets/contato_text.html', groups_count=h.get_site_statistics()['group_count'], dataset_count=h.get_site_statistics()['dataset_count'], current_url=current_url %}
       {% endblock %}
     </div>
   </article>

@@ -1,6 +1,6 @@
 {% extends "package/read_base.html" %}
 
-{% set pkg = c.pkg_dict %}
+
 
 {% block primary_content_inner %}
   {{ super() }}
@@ -11,6 +11,7 @@
         {{ _('Private') }}
       </span>
     {% endif %}
+   {#
     <h1>
       {% block page_heading %}
         {{ h.dataset_display_name(pkg) }}
@@ -22,12 +23,14 @@
         {% endif %}
       {% endblock %}
     </h1>
+    #}
     {% block package_notes %}
-      {% if pkg.notes %}
+    {#  
+    {% if pkg.notes %}
         <div class="notes embedded-content">
           {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
         </div>
-      {% endif %}
+      {% endif %}#}
     {% endblock %}
     {# FIXME why is this here? seems wrong #}
     <span class="insert-comment-thread"></span>
@@ -38,7 +41,17 @@
   {% endblock %}
 
   {% block package_tags %}
-    {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+    {% if pkg.tags %}
+    <div class="bs-example" style="margin-top: 10px;margin-bottom: 10px;">
+      <div class="bootstrap-tagsinput" style="padding: 10px;">
+        {% for tag in pkg.tags %}
+         <span class="tag label label-info px-1"><a style="color: #00a195;" href="{% url_for controller='package', action='search', tags=tag.name %}">{{ h.truncate(tag.display_name, 22) }}</a></span> 
+         {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {#{% snippet "package/snippets/tags.html", tags=pkg.tags %}#}
+
   {% endblock %}
 
   {% block package_additional_info %}

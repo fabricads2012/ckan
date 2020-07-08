@@ -982,7 +982,7 @@ def package_show(context, data_dict):
 
     if data_dict.get('use_default_schema', False):
         context['schema'] = ckan.logic.schema.default_show_package_schema()
-    include_tracking = asbool(data_dict.get('include_tracking', False))
+    include_tracking = asbool(data_dict.get('include_tracking', True))
 
     package_dict = None
     use_cache = (context.get('use_cache', True)

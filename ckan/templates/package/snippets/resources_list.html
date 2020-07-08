@@ -9,6 +9,77 @@ Example:
   {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
 
 #}
+
+                              <ul class="nav nav-tabs ml-0" role="tablist">
+                                <li class="nav-item pb-0">
+                                    <a class="nav-link active show" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Conjunto de dados</a>
+                                </li>
+                                {{ h.build_nav_icon_header('dataset_groups', _('Groups'), id=pkg.name, url='/dataset/groups/') }}
+                                {{ h.build_nav_icon_header('dataset_activity', _('Activity Stream'), id=pkg.name, url='/dataset/activity/') }}
+  
+                            </ul>
+                    
+                            <div class="tab-content">
+                                <div class="tab-pane active show" id="home" role="tabpanel">
+                                    <p>
+                                        {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
+                                    </p>
+                                    <h4 class="text-left">Dados e recursos</h4>
+                                    {% for resource in resources %}
+                                        {% set can_edit = h.check_access('package_update', {'id':pkg.id }) %}
+                                        {% set url_action = 'resource_edit' if url_is_edit and can_edit else 'resource_read' %}
+                                        {% set url = h.url_for(controller='package', action=url_action, id=pkg.name, resource_id=resource.id) %}
+                                        {% set ext= h.get_translated(resource, 'format')%}    
+                                        {%if ext =="JSON"%}
+                                          {%set iClass="text-yellow-main"%}
+                                          {%set tClass="bg-yellow-main"%}
+                                        {%elif ext =="XLS"%} 
+                                          {%set iClass="text-success"%}
+                                          {%set tClass="bg-success"%}
+                                        {%elif ext =="CSV"%} 
+                                          {%set iClass="text-success"%}
+                                          {%set tClass="bg-success"%}
+                                        {%elif ext =="PDF"%}  
+                                          {%set iClass="text-danger"%}
+                                          {%set tClass="bg-red"%}
+                                        {%elif ext =="XML"%}  
+                                          {%set iClass="text-info"%}
+                                          {%set tClass="bg-info"%}
+                                        {%else%}
+                                          {%set iClass="text-dark"%}
+                                          {%set tClass="bg-dark"%}
+                                        {%endif%}
+                                        
+                                    <div class="card">
+                                        <div class="card-body card-data">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-1 col-sm-1  col-6 order-1">
+                                                    <i class="fa fa-file-o fa-3x {{iClass}} mr-3" aria-hidden="true"></i> 
+                                                    <p class="textTitle {{tClass}}">{{ h.get_translated(resource, 'format') }}</p>
+                                                </div>
+                                                <div class="col-lg-10 col-sm-10 order-sm-3 order-3 order-lg-2 col-12 linksDatas">
+                                                  
+                                                    <a href="{{ url }}" title="{{ resource.name or resource.description }}" class="link-data">{{ h.resource_display_name(resource) | truncate(50) }}</a>
+                                                </div>
+                                                <div class="col-lg-1 order-sm-2 order-lg-3 col-6  order-sm-2 order-2">
+                                                    <div class="icone-eyeDownload">
+                                                        {% if can_edit %}
+                                                        <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=resource.id) }}" class="icon-circle bg-blue text-white mr-2"><i class="fa fa-pencil"     aria-hidden="true"></i></a>
+                                                        {% endif%}
+                                                        <a href="{{url}}" class="icon-circle bg-blue text-white mr-2"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        <a href="{{ resource.url }}" target="_blank" class="icon-circle bg-success text-white"><i class="fa fa-download"  aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    
+                                </div>
+                                
+                            </div>
+    
+                            {#                      
 <section id="dataset-resources" class="resources">
   <h3>{{ _('Data and Resources') }}</h3>
   {% block resource_list %}
@@ -32,3 +103,4 @@ Example:
     {% endif %}
     {% endblock %}
 </section>
+#}

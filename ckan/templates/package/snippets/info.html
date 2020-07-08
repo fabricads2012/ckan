@@ -10,28 +10,69 @@ Example:
 #}
 {% block package_info %}
   {% if pkg %}
+  {% set  organization = h.get_organization(pkg.organization.name) %}
+  {% set truncate = truncate or 0 %}
+  {% set url = h.url_for(organization.type + '_read', id=organization.name, ) %}
+  
+    <div class="brochure text-left reset-circle mb-0">
+      {% if has_context_title %}
+        <h3>{{ _('Organization') }}</h3>
+      {% endif %}
+      
+      <div class="divGrupo-icon">
+          <img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" width="180" alt="{{ organization.name }}" />
+      </div>
+     
+      {% if organization.description %}
+        <p class="mt-2">   
+          {{ h.markdown_extract(organization.description, 180) }}
+          {% link_for _('read more'), controller='organization', action='about', id=organization.name %}
+        
+      {% else %}
+        <p class="mt-2">{{ _('There is no description for this organization') }}
+      {% endif %}
+        </p>
+        
+      {% set num_followers = h.follow_count('dataset', pkg.id) %}
+      <div class="nums">
+        <dl>
+          <dt>{{ _('Followers') }}</dt>
+          <dd data-module="followers-counter" data-module-id="{{ pkg.id }}" data-module-num_followers="{{ num_followers }}">{{ h.SI_number_span(num_followers) }}</dd>
+        </dl>
+      </div>
+      {% if not hide_follow_button %}
+        <div class="follow_button">
+          {{ h.follow_button('dataset', pkg.id) }}
+        </div>
+      {% endif %}
+  </div>
+  <div class="service-social">
+      <h3 class="mb-3 mt-3">Compartilhe</h3>
+      {% set current_url = h.full_current_url() %}
+      <div class="d-flex justify-content-between">
+          <a target="_blank" href="https://www.facebook.com/sharer.php?u={{ current_url }}"><i class="fa fa-facebook  icon-circle bg-blue-darken" aria-hidden="true"></i></a>
+          <a target="_blank" href="https://www.instagram.com/prefeiturafortalezavoce/"><i class="fa fa-instagram icon-circle bg-pink" aria-hidden="true"></i></a>
+          <a target="_blank" href="https://twitter.com/share?url={{ current_url }}"><i class="fa fa-twitter   icon-circle bg-info" aria-hidden="true"></i></a>
+      </div>
+      <p></p>
+  </div>
+  <h3>Conheça </h3>
+  <a href="https://digital.fortaleza.ce.gov.br/" target="_blank">
+      <img src="/base/assets/images/logomarca.jpg" width="160" alt="Fortaleza digital">
+  </a>
     <section class="module module-narrow">
       <div class="module context-info">
         <div class="module-content">
           {% block package_info_inner %}
             {% block heading %}
-              <h1 class="heading">{{ h.dataset_display_name(pkg) }}</h1>
+              {#<h1 class="heading">{{ h.dataset_display_name(pkg) }}</h1>#}
+
             {% endblock %}
             {% block nums %}
-              {% set num_followers = h.follow_count('dataset', pkg.id) %}
-              <div class="nums">
-                <dl>
-                  <dt>{{ _('Followers') }}</dt>
-                  <dd data-module="followers-counter" data-module-id="{{ pkg.id }}" data-module-num_followers="{{ num_followers }}">{{ h.SI_number_span(num_followers) }}</dd>
-                </dl>
-              </div>
+             
             {% endblock %}
             {% block follow_button %}
-              {% if not hide_follow_button %}
-                <div class="follow_button">
-                  {{ h.follow_button('dataset', pkg.id) }}
-                </div>
-              {% endif %}
+             
             {% endblock %}
           {% endblock %}
         </div>

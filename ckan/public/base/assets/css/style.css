@@ -85,6 +85,9 @@
 # Gmaps
 # Fore Zero Page
 --------------------------------------------------------------*/
+.font-white{
+	color:#fff !important;
+}
 * {
     margin: 0;
     padding: 0;
@@ -2265,7 +2268,7 @@
       -webkit-mask-size: 100%;
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-position: bottom center;
-      -webkit-mask-image: url(../../assets/images/pageheader/pattern.png); }
+      }
     .page-header .pageheader-textarea {
       z-index: 1; }
       @media (min-width: 576px) {

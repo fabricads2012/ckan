@@ -61,26 +61,28 @@ Example:
                   <!--Truncate-->
 
                   <div class="d-flex align-items-center mt-2">
-
+                      {% set total_views=0 %}
                       {% for resource in package.resources %}
+                          {# set total_views = total_views + resource.tracking_summary.total#}
+                          
                            {% if resource.format =='PDF' %}
                            <a href="/dataset?res_format=PDF"><span class="badge badge-danger mr-2 btn-danger">PDF</span></a>
-                           {% endif %}
-                           {% if resource.format =='CSV' %}
+                           {% elif resource.format =='CSV' %}
                            <a href="/dataset?res_format=CSV"><span class="badge badge-success mr-2 btn-success">CSV</span></a>
-                           {% endif %}
-                           {% if resource.format =='JSON' %}
+                           {% elif resource.format =='JSON' %}
                            <a href="/dataset?res_format=JSON"><span class="badge badge-warning mr-2 btn-warning">JSON</span></a>
-                           {% endif %}
-                           {% if resource.format =='XML' %}
-                           <a href="/dataset?res_format=XML"><span class="badge badge-info btn-info">XML</span></a>
+                           {% elif resource.format =='XML' %}
+                           <a href="/dataset?res_format=XML"><span class="badge badge-info mr-2 btn-info">XML</span></a>
+                           {% else %}
+                           <a href="/dataset?res_format={{resource.format}}"><span class="badge badge-dark mr-2 btn-dark">{{resource.format}}</span></a>
                            {% endif %}
                       {% endfor %}
                   </div>
                   <div class="mt-3 floatRight">
-                      <i class="icon-eye icons mr-1 pt-1"></i> Visitas<b class="ml-1 mr-2 text-primary">00</b> |
+                      <i class="icon-eye icons mr-1 pt-1"></i> Visitas<b class="ml-1 mr-2 text-primary">{{total_views}}</b> |
                       <i class="icon-cloud-upload icons mr-1 pt-1 ml-2"></i> 
                       Atualização:<b class="ml-1 text-primary">{{ h.render_datetime(package.metadata_modified,date_format='%d/%m/%Y', with_hours=False) }}</b>
+                      
                   </div>
               </div>
           </div>
@@ -123,25 +125,24 @@ Example:
                         <div class="d-flex align-items-center mt-2">
 
                           {% for resource in package.resources %}
-                                {% if resource.format =='PDF' %}
-                                <a href="/dataset?res_format=PDF"><span class="badge badge-danger mr-2 btn-danger">PDF</span></a>
-                                {% endif %}
-                                {% if resource.format =='CSV' %}
-                                <a href="/dataset?res_format=CSV"><span class="badge badge-success mr-2 btn-success">CSV</span></a>
-                                {% endif %}
-                                {% if resource.format =='JSON' %}
-                                <a href="/dataset?res_format=JSON"><span class="badge badge-warning mr-2 btn-warning">JSON</span></a>
-                                {% endif %}
-                                {% if resource.format =='XML' %}
-                                <a href="/dataset?res_format=XML"><span class="badge badge-info btn-info">XML</span></a>
-                                {% endif %}
+                            {% if resource.format =='PDF' %}
+                              <a href="/dataset?res_format=PDF"><span class="badge badge-danger mr-2 btn-danger">PDF</span></a>
+                              {% elif resource.format =='CSV' %}
+                              <a href="/dataset?res_format=CSV"><span class="badge badge-success mr-2 btn-success">CSV</span></a>
+                              {% elif resource.format =='JSON' %}
+                              <a href="/dataset?res_format=JSON"><span class="badge badge-warning mr-2 btn-warning">JSON</span></a>
+                              {% elif resource.format =='XML' %}
+                              <a href="/dataset?res_format=XML"><span class="badge badge-info mr-2 btn-info">XML</span></a>
+                              {% else %}
+                              <a href="/dataset?res_format={{resource.format}}"><span class="badge badge-dark mr-2 btn-dark">{{resource.format}}</span></a>
+                              {% endif %}
                           {% endfor %}
                             
                         </div>
                         <div class="mt-3">
-                            Visitas<b class="mr-1 ml-1 text-primary">00</b>  
+                            Visitas<b class="mr-1 ml-1 text-primary">111</b>  
                             Atualização:<b class="ml-1 text-primary">{{ h.render_datetime(package.metadata_modified,date_format='%d/%m/%Y', with_hours=False) }}</b>
-                        </div>
+                          </div>
                     </div>
                 </div> 
               </div>

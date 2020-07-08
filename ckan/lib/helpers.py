@@ -844,6 +844,23 @@ def build_nav_main(*args):
         output += _make_menu_item(menu_item, title)
     return output
 
+@core_helper
+def build_nav_icon_header(menu_item, title, **kw):
+    '''Build a navigation item used for example in ``user/read_base.html``.
+
+    Outputs ``<li><a href="..."><i class="icon.."></i> title</a></li>``.
+
+    :param menu_item: the name of the defined menu item defined in
+      config/routing as the named route of the same name
+    :type menu_item: string
+    :param title: text used for the link
+    :type title: string
+    :param kw: additional keywords needed for creating url eg ``id=...``
+
+    :rtype: HTML literal
+
+    '''
+    return _make_menu_item_header(menu_item, title, **kw)
 
 @core_helper
 def build_nav_icon(menu_item, title, **kw):
@@ -957,6 +974,40 @@ def _make_menu_item(menu_item, title, **kw):
         return literal('<li class="active">') + link + literal('</li>')
     return literal('<li>') + link + literal('</li>')
 
+def _make_menu_item_header(menu_item, title, **kw):
+    ''' build a navigation item used for example breadcrumbs
+
+    outputs <li><a href="..."></i> title</a></li>
+
+    :param menu_item: the name of the defined menu item defined in
+    config/routing as the named route of the same name
+    :type menu_item: string
+    :param title: text used for the link
+    :type title: string
+    :param **kw: additional keywords needed for creating url eg id=...
+
+    :rtype: HTML literal
+
+    This function is called by wrapper functions.
+    '''
+    menu_item = map_pylons_to_flask_route_name(menu_item)
+    _menu_items = config['routes.named_routes']
+    if menu_item not in _menu_items:
+        raise Exception('menu item `%s` cannot be found' % menu_item)
+    item = copy.copy(_menu_items[menu_item])
+    item.update(kw)
+    active = _link_active(item)
+    needed = item.pop('needed')
+    for need in needed:
+        if need not in kw:
+            raise Exception('menu item `%s` need parameter `%s`'
+                            % (menu_item, need))
+    
+    link = literal('<a class="nav-link"  href="') + kw['url'] + kw['id']  + literal('" role="tab"  aria-selected="false">') + title + literal('</a>')
+    if active:
+        link = literal('<a class="nav-link active show"  href="') + kw['url'] + kw['id']  + literal('" role="tab"  aria-selected="true">') + title + literal('</a>')
+        return literal('<li class="nav-item pb-0">') + link + literal('</li>')
+    return literal('<li class="nav-item pb-0">') + link + literal('</li>')
 
 @core_helper
 def default_group_type():
